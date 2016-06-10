@@ -1,0 +1,20 @@
+{
+  "name": "chisel-sample",
+  "version": "0.0.1",
+  "description": "Chisel sample project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Xfive",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-css-globbing": "^0.1.8",
+    "gulp-sass": "^2.3.1"
+  },
+  "dependencies": {
+    "normalize.css": "^4.1.1"
+  }
+}
