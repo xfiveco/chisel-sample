@@ -8,15 +8,22 @@
   },
   "author": "Xfive",
   "license": "ISC",
+  "chisel": {
+    "paths": {
+      "src": "src",
+      "dest": "dist"
+    }
+  },
   "devDependencies": {
     "browser-sync": "^2.13.0",
+    "glob": "^7.0.3",
     "gulp": "^3.9.1",
     "gulp-css-globbing": "^0.1.8",
     "gulp-load-plugins": "^1.2.4",
-    "gulp-sass": "^2.3.1"
+    "gulp-sass": "^2.3.1",
+    "gulp-twig-up-to-date": "^0.6.1"
   },
   "dependencies": {
-    "gulp-twig-up-to-date": "^0.6.1",
     "normalize-scss": "^5.0.3",
     "normalize.css": "^4.1.1"
   }
