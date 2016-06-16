@@ -1,11 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
-var sass = require('gulp-sass');
-var cssGlobbing = require('gulp-css-globbing');
-var twig = require('gulp-twig-up-to-date');
+var plugins = require('gulp-load-plugins')({ pattern: '*' });
 
 var src = {
   styles: 'src/styles/**/*',
@@ -21,12 +17,12 @@ var dist = {
 
 // Browsersync
 gulp.task('serve', function() {
-  browserSync.init({
+  plugins.browserSync.init({
     server: './'
   });
 
-  gulp.watch(src.php).on('change', reload);
-  gulp.watch(src.twig).on('change', reload);
+  gulp.watch(src.php).on('change', plugins.browserSync.reload);
+  gulp.watch(src.twig).on('change', plugins.browserSync.reload);
   gulp.watch(src.styles, ['sass']);
   gulp.watch(src.templates, ['templates']);
 });
@@ -34,18 +30,18 @@ gulp.task('serve', function() {
 // Styles
 gulp.task('sass', function() {
   return gulp.src(src.styles_main)
-    .pipe(cssGlobbing({ extensions: ['.scss', '.css'] }))
-    .pipe(sass())
+    .pipe(plugins.cssGlobbing({ extensions: ['.scss', '.css'] }))
+    .pipe(plugins.sass())
     .pipe(gulp.dest(dist.css))
-    .pipe(browserSync.stream());
+    .pipe(plugins.browserSync.stream());
 });
 
 // Templates
 gulp.task('templates', function() {
   return gulp.src(src.templates)
-    .pipe(twig({ errorLogToConsole: true }))
+    .pipe(plugins.twigUpToDate({ errorLogToConsole: true }))
     .pipe(gulp.dest(dist.templates))
-    .on('end', browserSync.reload);
+    .on('end', plugins.browserSync.reload);
 });
 
 gulp.task('default', ['serve']);
