@@ -2,7 +2,6 @@
 
 var serveTask = function (gulp, plugins, config) {
   gulp.task('serve', function() {
-
     var reload = plugins.browserSync.reload;
 
     plugins.browserSync.init({
