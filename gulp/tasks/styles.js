@@ -10,10 +10,13 @@ var stylesTask = function (gulp, plugins, config, helpers) {
     ];
     
     return gulp.src(src)
+      .pipe(plugins.sourcemaps.init())
       .pipe(plugins.plumber(helpers.onError))
       .pipe(plugins.cssGlobbing({ extensions: ['.scss', '.css'] }))
       .pipe(plugins.sass({ outputStyle: 'expanded', includePaths: ['node_modules'] }))
       .pipe(plugins.postcss(postcssPlugins))
+      .pipe(plugins.cleanCss())
+      .pipe(plugins.sourcemaps.write('./'))
       .pipe(gulp.dest(dest))
       .pipe(plugins.browserSync.stream());
   });
