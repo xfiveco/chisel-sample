@@ -17,7 +17,10 @@ var stylesTask = function (gulp, plugins, config, helpers) {
       .pipe(plugins.postcss(postcssPlugins))
       .pipe(plugins.cleanCss())
       .pipe(plugins.sourcemaps.write('./'))
+      .pipe(plugins.rev())
       .pipe(gulp.dest(dest))
+      .pipe(plugins.rev.manifest())
+      .pipe(gulp.dest(config.paths.src))
       .pipe(plugins.browserSync.stream());
   });
 };
