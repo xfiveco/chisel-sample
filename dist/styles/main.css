@@ -17,13 +17,15 @@ html {
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
      * Remove the margin in all browsers (opinionated).
      */
 body {
-  margin: 0; }
+  margin: 0;
+}
 
 /* HTML5 display definitions
        ========================================================================== */
@@ -44,7 +46,8 @@ menu,
 nav,
 section,
 summary {
-  display: block; }
+  display: block;
+}
 
 /**
      * Add the correct display in IE <10.
@@ -53,20 +56,23 @@ audio,
 canvas,
 progress,
 video {
-  display: inline-block; }
+  display: inline-block;
+}
 
 /**
      * Add the correct display and remove excess height in iOS 4-7.
      */
 audio:not([controls]) {
   display: none;
-  height: 0; }
+  height: 0;
+}
 
 /**
      * Add the correct vertical alignment in Chrome, Firefox, and Opera.
      */
 progress {
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /**
      * Add the correct display in IE <11, Safari <8, and Firefox <22.
@@ -74,7 +80,8 @@ progress {
      */
 template,
 [hidden] {
-  display: none; }
+  display: none;
+}
 
 /* Links
        ========================================================================== */
@@ -86,7 +93,8 @@ a {
   background-color: transparent;
   /* 1 */
   -webkit-text-decoration-skip: objects;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
      * Remove the outline on focused links when they are also active or hovered
@@ -94,7 +102,8 @@ a {
      */
 a:active,
 a:hover {
-  outline-width: 0; }
+  outline-width: 0;
+}
 
 /* Text-level semantics
        ========================================================================== */
@@ -108,21 +117,24 @@ abbr[title] {
   text-decoration: underline;
   /* 2 */
   text-decoration: underline dotted;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
      * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
      */
 b,
 strong {
-  font-weight: inherit; }
+  font-weight: inherit;
+}
 
 /**
      * Add the correct font weight in Chrome, Edge, and Safari.
      */
 b,
 strong {
-  font-weight: bolder; }
+  font-weight: bolder;
+}
 
 /**
      * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -132,13 +144,15 @@ code,
 kbd,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em; }
+  font-size: 1em;
+}
 
 /**
      * Add the correct font style in Android <4.4.
      */
 dfn {
-  font-style: italic; }
+  font-style: italic;
+}
 
 /**
      * Correct the font size and margin on `h1` elements within `section` and
@@ -147,20 +161,23 @@ dfn {
 h1 {
   font-size: 2em;
   /* Set 1 unit of vertical rhythm on the top and bottom margins. */
-  margin: 0.75em 0; }
+  margin: 0.75em 0;
+}
 
 /**
      * Add the correct background and color in IE <10.
      */
 mark {
   background-color: #ff0;
-  color: #000; }
+  color: #000;
+}
 
 /**
      * Add the correct font size in all browsers.
      */
 small {
-  font-size: 80%; }
+  font-size: 80%;
+}
 
 /**
      * Prevent `sub` and `sup` elements from affecting the line height in
@@ -171,13 +188,16 @@ sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 sub {
-  bottom: -0.25em; }
+  bottom: -0.25em;
+}
 
 sup {
-  top: -0.5em; }
+  top: -0.5em;
+}
 
 /* Embedded content
        ========================================================================== */
@@ -185,13 +205,15 @@ sup {
      * Remove the border on images inside links in IE <11.
      */
 img {
-  border-style: none; }
+  border-style: none;
+}
 
 /**
      * Hide the overflow in IE.
      */
 svg:not(:root) {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 /* Grouping content
        ========================================================================== */
@@ -199,7 +221,8 @@ svg:not(:root) {
      * Add the correct margin in IE 8.
      */
 figure {
-  margin: 1.5em 40px; }
+  margin: 1.5em 40px;
+}
 
 /**
      * 1. Add the correct box sizing in Firefox.
@@ -211,11 +234,13 @@ hr {
   height: 0;
   /* 1 */
   overflow: visible;
-  /* 2 */ }
+  /* 2 */
+}
 
 pre {
   font-family: monospace, monospace;
-  font-size: 1em; }
+  font-size: 1em;
+}
 
 /* Forms
        ========================================================================== */
@@ -252,13 +277,15 @@ textarea {
   font: inherit;
   /* 1 */
   margin: 0;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
      * Show the overflow in IE.
      */
 button {
-  overflow: visible; }
+  overflow: visible;
+}
 
 /**
      * Remove the inheritance of text transform in Edge, Firefox, and IE.
@@ -267,7 +294,8 @@ button {
 button,
 select {
   /* 1 */
-  text-transform: none; }
+  text-transform: none;
+}
 
 /**
      * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
@@ -279,7 +307,8 @@ html [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
-  /* 2 */ }
+  /* 2 */
+}
 
 button,
 [type="button"],
@@ -290,24 +319,30 @@ button,
        */
   /**
        * Restore the focus styles unset by the previous rule.
-       */ }
-  button::-moz-focus-inner,
-  [type="button"]::-moz-focus-inner,
-  [type="reset"]::-moz-focus-inner,
-  [type="submit"]::-moz-focus-inner {
-    border-style: none;
-    padding: 0; }
-  button:-moz-focusring,
-  [type="button"]:-moz-focusring,
-  [type="reset"]:-moz-focusring,
-  [type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText; }
+       */
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
 
 /**
      * Show the overflow in Edge.
      */
 input {
-  overflow: visible; }
+  overflow: visible;
+}
 
 /**
      * 1. Add the correct box sizing in IE <11.
@@ -320,14 +355,16 @@ input {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
      * Correct the cursor style of increment and decrement buttons in Chrome.
      */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-  height: auto; }
+  height: auto;
+}
 
 /**
      * 1. Correct the odd appearance in Chrome and Safari.
@@ -340,16 +377,20 @@ input {
   /* 2 */
   /**
        * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
-       */ }
-  [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none; }
+       */
+}
+
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
 
 /**
      * Correct the text style of placeholders in Chrome, Edge, and Safari.
      */
 ::-webkit-input-placeholder {
   color: inherit;
-  opacity: 0.54; }
+  opacity: 0.54;
+}
 
 /**
      * 1. Correct the inability to style clickable types in iOS and Safari.
@@ -359,7 +400,8 @@ input {
   -webkit-appearance: button;
   /* 1 */
   font: inherit;
-  /* 2 */ }
+  /* 2 */
+}
 
 /**
      * Change the border, margin, and padding in all browsers (opinionated).
@@ -367,7 +409,8 @@ input {
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
+  padding: 0.35em 0.625em 0.75em;
+}
 
 /**
      * 1. Correct the text wrapping in Edge and IE.
@@ -388,19 +431,22 @@ legend {
   color: inherit;
   /* 2 */
   padding: 0;
-  /* 3 */ }
+  /* 3 */
+}
 
 /**
      * Restore the font weight unset by a previous rule.
      */
 optgroup {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 /**
      * Remove the default vertical scrollbar in IE.
      */
 textarea {
-  overflow: auto; }
+  overflow: auto;
+}
 
 /**
  * Set the global `box-sizing` state to `border-box`.
@@ -409,11 +455,14 @@ textarea {
  * paulirish.com/2012/box-sizing-border-box-ftw
  */
 html {
-  box-sizing: border-box; }
-  html *,
-  html *:before,
-  html *:after {
-    box-sizing: inherit; }
+  box-sizing: border-box;
+}
+
+html *,
+html *:before,
+html *:after {
+  box-sizing: inherit;
+}
 
 /**
  * As well as using normalize.css, it is often advantageous to remove all
@@ -428,27 +477,31 @@ figure,
 table, th, td, caption,
 hr {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 /**
  * Give a help cursor to elements that give extra info on `:hover`.
  */
 abbr[title],
 dfn[title] {
-  cursor: help; }
+  cursor: help;
+}
 
 /**
  * Remove underlines from potentially troublesome elements.
  */
 u,
 ins {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 /**
  * Apply faux underlines to inserted text via `border-bottom`.
  */
 ins {
-  border-bottom: 1px solid; }
+  border-bottom: 1px solid;
+}
 
 /**
  * Where `margin-bottom` is concerned,this value will be the same as the
@@ -462,54 +515,68 @@ hr,
 table,
 fieldset, figure,
 pre {
-  margin-bottom: 1.3rem; }
+  margin-bottom: 1.3rem;
+}
 
 /**
  * Where `margin-left` is concerned we want to try and indent certain elements
  * by a consistent amount. Define that amount once,here.
  */
 ul, ol, dd {
-  margin-left: 1rem; }
+  margin-left: 1rem;
+}
 
 h1, h2 {
   color: #000;
   font-weight: 800;
   line-height: 1.375;
-  margin: 0 0 2rem; }
+  margin: 0 0 2rem;
+}
 
 h1 {
-  font-size: 4rem; }
+  font-size: 4rem;
+}
 
 h2 {
-  font-size: 2rem; }
+  font-size: 2rem;
+}
 
 hr {
   background-color: #ccc;
   border: 0;
   display: block;
   height: 1px;
-  margin: 1.3rem auto; }
+  margin: 1.3rem auto;
+}
 
 a {
   color: #000;
-  text-decoration: underline; }
-  a:hover {
-    color: #000; }
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #000;
+}
 
 li {
-  margin-bottom: 0.5rem; }
-  li > ul,
-  li > ol {
-    margin-bottom: 0;
-    margin-left: 1rem;
-    margin-top: 0.5rem; }
+  margin-bottom: 0.5rem;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
 
 dt {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 dd {
   margin-bottom: 1rem;
-  margin-left: 1rem; }
+  margin-left: 1rem;
+}
 
 html {
   background: #fff;
@@ -517,45 +584,65 @@ html {
   font-family: Times, serif;
   font-size: 0.875rem;
   line-height: 2;
-  padding: 1rem; }
-  @media only screen and (min-width: 768px) {
-    html {
-      font-size: 1em;
-      padding: 2rem; } }
-  @media only screen and (min-width: 1024px) {
-    html {
-      font-size: 1.125em;
-      padding: 3rem; } }
-  @media only screen and (min-width: 1600px) {
-    html {
-      font-size: 1.25em;
-      padding: 4rem; } }
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 1em;
+    padding: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 1.125em;
+    padding: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  html {
+    font-size: 1.25em;
+    padding: 4rem;
+  }
+}
 
 .o-list-bare {
   list-style: none;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 .c-footer {
   font-size: 0.8rem;
-  margin-top: 2rem; }
+  margin-top: 2rem;
+}
 
 .c-container {
-  max-width: 900px; }
+  max-width: 900px;
+}
 
 /* Hide visually but not from screen readers */
 .u-hide {
   left: -9999em !important;
-  position: absolute !important; }
+  position: absolute !important;
+}
 
 .u-spacer {
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+}
 
 .u-noscroll {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .u-hide\@small {
-  display: none; }
-  @media only screen and (min-width: 768px) {
-    .u-hide\@small {
-      display: block; } }
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .u-hide\@small {
+    display: block;
+  }
+}

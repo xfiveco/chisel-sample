@@ -12,7 +12,7 @@ var stylesTask = function (gulp, plugins, config, helpers) {
     return gulp.src(src)
       .pipe(plugins.plumber(helpers.onError))
       .pipe(plugins.cssGlobbing({ extensions: ['.scss', '.css'] }))
-      .pipe(plugins.sass())
+      .pipe(plugins.sass({ outputStyle: 'expanded', includePaths: ['node_modules'] }))
       .pipe(plugins.postcss(postcssPlugins))
       .pipe(gulp.dest(dest))
       .pipe(plugins.browserSync.stream());
