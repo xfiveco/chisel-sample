@@ -5,6 +5,7 @@ var buildTask = function (gulp, plugins, config) {
     plugins.del([config.paths.dest]).then(function () {
       gulp.start([
         'styles',
+        'lint',
         'scripts',
         'templates'
       ]);
