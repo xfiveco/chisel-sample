@@ -37,6 +37,7 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "jquery": "^3.1.0",
     "normalize-scss": "^5.0.3",
     "normalize.css": "^4.1.1"
   }
