@@ -24,7 +24,7 @@ var scriptsTask = function (gulp, plugins, config, helpers) {
       .pipe(plugins.browserSync.stream());
   }
   
-  gulp.task('scripts', function () {
+  gulp.task('scripts', ['lint'], function () {
     return bundle(plugins.browserify(customOpts));
   });
 
