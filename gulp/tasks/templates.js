@@ -4,11 +4,10 @@ var fs = require('fs');
 
 var templatesTask = function (gulp, plugins, config, helpers) {
 
-   var src = config.paths.src + '/templates/*.twig';
+  var src = config.paths.src + '/templates/*.twig';
   var dest = config.paths.dest;
 
-  gulp.task('templates-watch', function() {
-
+  function templates(manifest) {
     return gulp.src(src)
       .pipe(plugins.plumber(helpers.onError))
       .pipe(plugins.twigUpToDate({ 
@@ -16,7 +15,11 @@ var templatesTask = function (gulp, plugins, config, helpers) {
           {
             name: "assetPath",
             func: function (path) {
-              return path;
+              if (manifest) {
+                return manifest[path];
+              } else {
+                return path;
+              }
             }
           }
         ],
@@ -25,27 +28,15 @@ var templatesTask = function (gulp, plugins, config, helpers) {
       .pipe(plugins.prettify({ indent_size: 2, preserve_newlines: true }))
       .pipe(gulp.dest(dest))
       .on('end', plugins.browserSync.reload);
+  }
+
+  gulp.task('templates-watch', function() {
+    templates();
   });
 
   gulp.task('templates-build', ['styles-build'], function() {
     var manifest = JSON.parse(fs.readFileSync(config.paths.dest + '/rev-manifest.json', 'utf8'));
-
-    return gulp.src(src)
-      .pipe(plugins.plumber(helpers.onError))
-      .pipe(plugins.twigUpToDate({ 
-        functions: [
-          {
-            name: "assetPath",
-            func: function (path) {
-              return manifest[path];
-            }
-          }
-        ],
-        errorLogToConsole: true 
-      }))
-      .pipe(plugins.prettify({ indent_size: 2, preserve_newlines: true }))
-      .pipe(gulp.dest(dest))
-      .on('end', plugins.browserSync.reload);
+    templates(manifest);
   });
 };
 

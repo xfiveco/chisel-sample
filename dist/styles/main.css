@@ -527,7 +527,7 @@ ul, ol, dd {
 }
 
 h1, h2 {
-  color: black;
+  color: red;
   font-weight: 800;
   line-height: 1.375;
   margin: 0 0 2rem;
@@ -550,12 +550,12 @@ hr {
 }
 
 a {
-  color: black;
+  color: red;
   text-decoration: underline;
 }
 
 a:hover {
-  color: black;
+  color: red;
 }
 
 li {
@@ -580,7 +580,7 @@ dd {
 
 html {
   background: #fff;
-  color: black;
+  color: red;
   font-family: Times, serif;
   font-size: 0.875rem;
   line-height: 2;
