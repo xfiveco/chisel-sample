@@ -1,3 +1,3 @@
 var greet = require('./greeting.js')
 
-greet('Test');
+greet('World Wide Web');

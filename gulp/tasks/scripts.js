@@ -16,7 +16,6 @@ var scriptsTask = function (gulp, plugins, config, helpers) {
       .pipe(plugins.vinylSourceStream('bundle.js'))
       .pipe(plugins.vinylBuffer())
       .pipe(plugins.sourcemaps.init({loadMaps: true}))
-       // Add transformation tasks to the pipeline here.
       .pipe(plugins.uglify())
       .on('error', helpers.onError)
       .pipe(plugins.sourcemaps.write('./'))
@@ -24,8 +23,16 @@ var scriptsTask = function (gulp, plugins, config, helpers) {
       .pipe(plugins.browserSync.stream());
   }
   
-  gulp.task('scripts', ['lint'], function () {
-    return bundle(plugins.browserify(customOpts));
+  gulp.task('scripts-build', ['styles-build', 'lint'], function () {
+    return bundle(plugins.browserify(customOpts))
+      .pipe(plugins.rev())
+      .pipe(gulp.dest(dest))
+      .pipe(plugins.rev.manifest({
+        path: config.paths.dest + '/rev-manifest.json',
+        base: config.paths.dest,
+        merge: true 
+      }))
+      .pipe(gulp.dest(config.paths.dest));
   });
 
   gulp.task('watchify', function () {

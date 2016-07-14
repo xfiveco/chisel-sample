@@ -34,7 +34,7 @@ var templatesTask = function (gulp, plugins, config, helpers) {
     templates();
   });
 
-  gulp.task('templates-build', ['styles-build'], function() {
+  gulp.task('templates-build', ['scripts-build'], function() {
     var manifest = JSON.parse(fs.readFileSync(config.paths.dest + '/rev-manifest.json', 'utf8'));
     templates(manifest);
   });
