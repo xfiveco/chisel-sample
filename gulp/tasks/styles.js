@@ -13,7 +13,7 @@ var stylesTask = function (gulp, plugins, config, helpers) {
       .pipe(plugins.sass({ outputStyle: 'expanded', includePaths: ['node_modules'] }))
       .pipe(plugins.sourcemaps.write('./'))
       .pipe(gulp.dest(dest))
-      .pipe(plugins.browserSync.stream());
+      .pipe(plugins.browserSync.stream({ match: '**/*.css' }));
   });
 
   gulp.task('styles-build', ['clean'], function() {
@@ -21,7 +21,7 @@ var stylesTask = function (gulp, plugins, config, helpers) {
     var postcssPlugins = [
       require('autoprefixer')()
     ];
-    
+
     return gulp.src(src)
       .pipe(plugins.sourcemaps.init())
       .pipe(plugins.plumber(helpers.onError))
