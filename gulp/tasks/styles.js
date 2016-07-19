@@ -16,7 +16,7 @@ var stylesTask = function (gulp, plugins, config, helpers) {
       .pipe(plugins.browserSync.stream({ match: '**/*.css' }));
   });
 
-  gulp.task('styles-build', ['clean'], function() {
+  gulp.task('styles-build', ['assets'], function() {
 
     var postcssPlugins = [
       require('autoprefixer')()
