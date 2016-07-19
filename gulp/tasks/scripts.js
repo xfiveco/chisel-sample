@@ -2,11 +2,8 @@
 
 var scriptsTask = function (gulp, plugins, config, helpers) {
 
-  var src = config.paths.src + '/scripts/';
-  var dest = config.paths.dest + '/scripts';
-
   var customOpts = {
-    entries: src + 'app.js',
+    entries: config.src.app,
     debug: true
   };
 
@@ -19,20 +16,20 @@ var scriptsTask = function (gulp, plugins, config, helpers) {
       .pipe(plugins.uglify())
       .on('error', helpers.onError)
       .pipe(plugins.sourcemaps.write('./'))
-      .pipe(gulp.dest(dest))
+      .pipe(gulp.dest(config.dest.scripts))
       .pipe(plugins.browserSync.stream());
   }
   
   gulp.task('scripts-build', ['lint', 'styles-build'], function () {
     return bundle(plugins.browserify(customOpts))
       .pipe(plugins.rev())
-      .pipe(gulp.dest(dest))
+      .pipe(gulp.dest(config.dest.scripts))
       .pipe(plugins.rev.manifest({
-        path: config.paths.dest + '/rev-manifest.json',
-        base: config.paths.dest,
+        path: config.dest.revManifest,
+        base: config.dest.base,
         merge: true 
       }))
-      .pipe(gulp.dest(config.paths.dest));
+      .pipe(gulp.dest(config.dest.base));
   });
 
   gulp.task('watchify', function () {

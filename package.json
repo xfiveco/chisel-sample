@@ -9,9 +9,20 @@
   "author": "Xfive",
   "license": "ISC",
   "chisel": {
-    "paths": {
-      "src": "src",
-      "dest": "dist"
+    "src": {
+      "assets": "src/assets/**/*",
+      "app": "src/scripts/app.js",
+      "base": "src",
+      "scripts": "src/scripts/**/*",
+      "styles": "src/styles/**/*",
+      "stylesMain": "src/styles/*.scss",
+      "templates": "src/templates/**/*.{twig,html}"
+    },
+    "dest": {
+      "base": "dist",
+      "revManifest": "dist/rev-manifest.json",
+      "scripts": "dist/scripts",
+      "styles": "dist/styles"
     }
   },
   "devDependencies": {

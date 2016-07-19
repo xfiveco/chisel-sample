@@ -4,11 +4,8 @@ var fs = require('fs');
 
 var templatesTask = function (gulp, plugins, config, helpers) {
 
-  var src = config.paths.src + '/templates/*.twig';
-  var dest = config.paths.dest;
-
   function templates(manifest) {
-    return gulp.src(src)
+    return gulp.src(config.src.templates)
       .pipe(plugins.plumber(helpers.onError))
       .pipe(plugins.twigUpToDate({ 
         functions: [
@@ -26,7 +23,7 @@ var templatesTask = function (gulp, plugins, config, helpers) {
         errorLogToConsole: true 
       }))
       .pipe(plugins.prettify({ indent_size: 2, preserve_newlines: true }))
-      .pipe(gulp.dest(dest))
+      .pipe(gulp.dest(config.dest.base))
       .on('end', plugins.browserSync.reload);
   }
 
@@ -35,7 +32,7 @@ var templatesTask = function (gulp, plugins, config, helpers) {
   });
 
   gulp.task('templates-build', ['scripts-build'], function() {
-    var manifest = JSON.parse(fs.readFileSync(config.paths.dest + '/rev-manifest.json', 'utf8'));
+    var manifest = JSON.parse(fs.readFileSync(config.dest.revManifest, 'utf8'));
     templates(manifest);
   });
 };

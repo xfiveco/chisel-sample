@@ -2,17 +2,14 @@
 
 var stylesTask = function (gulp, plugins, config, helpers) {
 
-  var src = config.paths.src + '/styles/*.scss';
-  var dest = config.paths.dest + '/styles';
-
   gulp.task('styles-watch', function() {
-    return gulp.src(src)
+    return gulp.src(config.src.stylesMain)
       .pipe(plugins.sourcemaps.init())
       .pipe(plugins.plumber(helpers.onError))
       .pipe(plugins.cssGlobbing({ extensions: ['.scss', '.css'] }))
       .pipe(plugins.sass({ outputStyle: 'expanded', includePaths: ['node_modules'] }))
       .pipe(plugins.sourcemaps.write('./'))
-      .pipe(gulp.dest(dest))
+      .pipe(gulp.dest(config.dest.styles))
       .pipe(plugins.browserSync.stream({ match: '**/*.css' }));
   });
 
@@ -22,7 +19,7 @@ var stylesTask = function (gulp, plugins, config, helpers) {
       require('autoprefixer')()
     ];
 
-    return gulp.src(src)
+    return gulp.src(config.src.stylesMain)
       .pipe(plugins.sourcemaps.init())
       .pipe(plugins.plumber(helpers.onError))
       .pipe(plugins.cssGlobbing({ extensions: ['.scss', '.css'] }))
@@ -31,9 +28,9 @@ var stylesTask = function (gulp, plugins, config, helpers) {
       .pipe(plugins.cleanCss())
       .pipe(plugins.sourcemaps.write('./'))
       .pipe(plugins.rev())
-      .pipe(gulp.dest(dest))
+      .pipe(gulp.dest(config.dest.styles))
       .pipe(plugins.rev.manifest())
-      .pipe(gulp.dest(config.paths.dest))
+      .pipe(gulp.dest(config.dest.base))
       .pipe(plugins.browserSync.stream());
   });
 };
