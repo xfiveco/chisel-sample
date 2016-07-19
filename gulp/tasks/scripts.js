@@ -9,6 +9,7 @@ var scriptsTask = function (gulp, plugins, config, helpers) {
 
   function bundle(bundler) {
     return bundler
+      .transform("babelify", { presets: ["es2015"] })
       .bundle()
       .pipe(plugins.vinylSourceStream('bundle.js'))
       .pipe(plugins.vinylBuffer())

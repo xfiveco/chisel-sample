@@ -1,3 +1,5 @@
 var greet = require('./greeting.js')
 
-greet('World!');
+const name = 'World';
+
+greet(name);
